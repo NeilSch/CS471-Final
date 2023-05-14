@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		</style>
+	</head>
+<body>
+<script>
+	const flock = [];
+
+	function setup() {
+			createCanvas(640,360);
+			flock.push(new Boid());
+		}
+	function draw() {
+			background(0);
+			for(let boid of flock){
+					boid.show();
+				}
+		}
+	class Boid {
+			constructor() {
+					this.position = createVector(width/2, height/2);
+					this.velocity = createVector();
+					this.acceleration = createVector();
+				}
+			show() {
+					strokeWeight(16);
+					stroke(255);
+					point(this.position.x, this.position.y);
+				}
+		}
+
+</script>
+</body>
+</html>
+
